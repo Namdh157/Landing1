@@ -34,8 +34,10 @@ window.addEventListener('scroll', () => {
     })
 })
 //js slide ảnh 
-var next = document.querySelector('#next');
-var prev = document.querySelector('#prev');
+var next = document.querySelector('.next');
+var prev = document.querySelector('.prev');
+var next1 = document.querySelector('.next1');
+var prev1 = document.querySelector('.prev1');
 let count = document.querySelectorAll('#list .item').length;
 let show = 0;
 let active = 0;
@@ -67,10 +69,19 @@ function stopSlideShow() {
     clearInterval(intervalId); // dừng việc thực hiện hàm nextSlide()
 }
 prev.onclick = function(){
+    console.log('hi')
     nextSlide();
     stopSlideShow();
 }
 next.onclick = function () {
+    nextSlide()
+    stopSlideShow();
+};
+prev1.onclick = function () {
+    nextSlide()
+    stopSlideShow();
+};
+next1.onclick = function () {
     nextSlide()
     stopSlideShow();
 };

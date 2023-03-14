@@ -632,8 +632,8 @@ hr {
 
 /* css next prev */
 
-#prev,
-#next {
+.prev, .prev1,
+.next, .next1 {
     position: absolute;
     top: 50%;
     border: 2px solid #ffffff;
@@ -647,8 +647,8 @@ hr {
     opacity: 0;
 }
 
-#prev:hover,
-#next:hover {
+.prev:hover, .prev1:hover,
+.next:hover, .next1:hover {
     background-color: black;
     border: none;
     cursor: pointer;
@@ -678,19 +678,19 @@ hr {
     }
 }
 
-.item-image:hover #prev {
+.item-image:hover .prev, .item-image:hover .prev1 {
     animation: prev 0.3s linear forwards;
 }
 
-.item-image:hover #next {
+.item-image:hover .next, .item-image:hover .next1 {
     animation: next 0.3s linear forwards;
 }
 
-#prev {
+.prev, .prev1 {
     left: 2%;
 }
 
-#next {
+.next, .next1 {
     right: 2%;
 }
 /* footer */
