@@ -1,4 +1,6 @@
-const navbar = document.querySelector("#menu");
+const navbar = document.querySelector('#menu');
+const menu = document.querySelector('.basic-infor')
+const fixed = menu.scrollTop;
 const sticky = navbar.scrollTop;
 const car = document.querySelector('.img');
 const abc = car.scrollTop;
@@ -12,9 +14,11 @@ window.onscroll = function () {
 
 function stickyMenu() {
     if (window.pageYOffset > sticky) {
-        navbar.classList.add("sticky");
+        navbar.classList.add('sticky');
+        menu.classList.add('fixed');
     } else {
-        navbar.classList.remove("sticky");
+        navbar.classList.remove('sticky');
+        menu.classList.remove('fixed');
     }
 }
 // js hiện dần các trang
