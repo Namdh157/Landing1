@@ -408,6 +408,12 @@ hr {
     margin-left: 35%;
     opacity: 0;
 }
+.text .button a{
+    text-decoration: none;
+}
+.text .button:hover a{
+    color: #ffffff;
+}
 
 .turbo.active .button {
     animation: showtext 2.1s ease-in-out 0.5s 1 forwards;
@@ -767,10 +773,9 @@ hr {
     text-decoration: none;
 }
 .bottom-choice h4{
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin-bottom: 20px;
     font-weight: 1000;
-    color: #dadada;
 }
 .bottom-choice li{
     list-style: none;
