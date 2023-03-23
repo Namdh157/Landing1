@@ -4,8 +4,6 @@ const fixed = menu.scrollTop;
 const sticky = navbar.scrollTop;
 const car = document.querySelector('.img');
 const abc = car.scrollTop;
-console.log(sticky);
-console.log(abc);
 console.log(window.pageYOffset);
 
 window.onscroll = function () {
@@ -26,10 +24,8 @@ let items = document.querySelectorAll('.allowActive');
 var landing_page = document.querySelector('#landing-page');
 window.addEventListener('scroll', () => {
     items.forEach(item => {
-        if (item.getBoundingClientRect().top <= window.innerHeight / (4 / 5)) {
-            item.classList.add('active');
-        } else {
-            // item.classList.remove('active');
+        if (item.getBoundingClientRect().top <= window.innerHeight / (4 / 5)) {          //lắng nghe sự kiện scroll đặt dk khoảng cách phần tử với
+            item.classList.add('active');                                               //màn hình để thêm class
         }
     })
 })
@@ -45,7 +41,7 @@ function nextSlide() {
     let hide = show - 1 < 0 ? count - 1 : show - 1;
     let lastHide = hide - 1 < 0 ? count - 1 : hide - 1;
     document.getElementById('item_' + lastHide).classList.remove('hide');
-    document.getElementById('item_' + hide).classList.remove('show');
+    document.getElementById('item_' + hide).classList.remove('show');                   //hàm thêm xóa claas chạy hiệu ứng slide
     document.getElementById('item_' + hide).classList.add('hide');
     document.getElementById('item_' + show).classList.add('show');
     // slide 2
@@ -55,12 +51,12 @@ function nextSlide() {
     document.getElementById('image_' + show).classList.add('show');
     show = show + 1 >= count ? 0 : show + 1;
 }
-let intervalId = null; // biến để lưu trữ id của interval
+let intervalId = null; 
 function startSlideShow() {
     intervalId = setInterval(nextSlide, 2000); // gọi hàm nextSlide() sau mỗi 3 giây
 }
 setTimeout(()=>{
-    startSlideShow();
+    startSlideShow();               //cho chạy hàm start sau 2 giây 
 },2000)
 function startSlideShow() {
     intervalId = setInterval(nextSlide, 3000); // gọi hàm nextSlide() sau mỗi 3 giây
@@ -69,20 +65,20 @@ function stopSlideShow() {
     clearInterval(intervalId); // dừng việc thực hiện hàm nextSlide()
 }
 prev.onclick = function(){
-    console.log('hi')
+    console.log('hi')           //dùng chung hiệu ứng của next 
     nextSlide();
     stopSlideShow();
 }
 next.onclick = function () {
-    nextSlide()
+    nextSlide()                             //lắng nghe sự kiện click để chạy hàm nextSlide và hàm dừng hàm interval
     stopSlideShow();
 };
 prev1.onclick = function () {
-    nextSlide()
+    nextSlide()                               //lắng nghe sự kiện click để chạy hàm nextSlide và hàm dừng hàm interval
     stopSlideShow();
 };
 next1.onclick = function () {
-    nextSlide()
+    nextSlide()                               //lắng nghe sự kiện click để chạy hàm nextSlide và hàm dừng hàm interval
     stopSlideShow();
 };
 //js menu đứng
@@ -90,11 +86,11 @@ var btMenu = document.querySelector('.button-menu');
 var menuMb = document.querySelector('.menu-mobile');
 var menuTab = document.querySelector('.tab-menu');
 btMenu.onclick = () => {
-    menuMb.classList.add('list-mb');
+    menuMb.classList.add('list-mb');        //lắng nghe sự kiện click để thêm class và style
     btMenu.style.opacity = '0';
 }
 menuTab.onclick = () => {
-    menuMb.classList.add('list-mb');
+    menuMb.classList.add('list-mb');         //lắng nghe sự kiện click để thêm class và style
     navbar.style.opacity = '0'
     menuTab.style.opacity = '0'
 
@@ -102,6 +98,6 @@ menuTab.onclick = () => {
 menuMb.addEventListener('click', () => {
     menuMb.classList.remove('list-mb');
     btMenu.style.opacity = '1';
-    menuTab.style.opacity = '1';
+    menuTab.style.opacity = '1';             //lắng nghe sự kiện click để xóa class và style
     navbar.style.opacity = '1';
 })
